@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoboWebControls : PlayerManager, IControls {
 	public void Update() {
-		Movement();
+		Movement(0);
 		Shoot();
 		Connect();
 	}
 
-	public override void Movement() {
+	public override void Movement(float _direction) {
 		throw new System.NotImplementedException();
 	}
 

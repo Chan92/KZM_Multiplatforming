@@ -1,6 +1,6 @@
 ﻿public interface IControls {
 	//movement of the player
-	void Movement();
+	void Movement(float _direction);
 
 	//breaks objects
 	void Shoot();

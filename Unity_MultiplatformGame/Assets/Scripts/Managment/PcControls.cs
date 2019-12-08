@@ -1,26 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PcControls : PlayerManager, IControls {
 	public void Update() {
-		Movement();
+		Movement(0);
 		Shoot();
 		Connect();
 	}
 
-	public override void Movement() {
-		if(Input.GetKeyDown(KeyCode.Space)) {
-			print("not working");
-			base.Movement();
+	public override void Movement(float _direction) {
+		if(Input.GetButton("Horizontal")) {
+			_direction = Input.GetAxis("Horizontal");
+
+			base.Movement(_direction);
 		}
 	}
 
 	public override void Shoot() {
-		throw new System.NotImplementedException();
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			base.Shoot();
+		}
 	}
 
 	public override void Connect() {
-		throw new System.NotImplementedException();
+		if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+			base.Connect();
+		}
 	}
 }

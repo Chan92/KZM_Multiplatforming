@@ -23,6 +23,7 @@ public class CameraControler : MonoBehaviour{
 		} else {
 			if(transform.parent == null) {
 				transform.parent = player;
+				transform.localPosition = new Vector3(0, transform.localPosition.y, transform.localPosition.z);
 			}
 		}
     }
